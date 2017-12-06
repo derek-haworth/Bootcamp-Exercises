@@ -1,3 +1,4 @@
+/* Background Goodies */
 body {
   text-align: center;
   margin: 30px auto 50px auto;
@@ -8,7 +9,6 @@ body {
   position: relative;
   background: #29d1ce; 
 }  
-
 html {
 	/* background-image: url('../images/background.png'); */
 	background-image: url('../images/starry.gif');
@@ -16,22 +16,27 @@ html {
   	background-color: white;
   	background-size: 70px;
 }
+
+/* Overrides */
 p {
 	color: yellow;
 	font-size: 1.5em;
 	font-weight: bold;
 	margin: 10px 0;
 }
-
+span {
+	margin:  0 5px;
+}
 .container {
 	width: 960px;
 }
 
+
+/* Title / Header Area */
 header {
 	margin: 0 0 55px 0;
 	position: relative
 }
-
 header h1 {
 	box-shadow: 5px 5px #ac69d3;
     text-shadow: 3px 3px #ac69d3;
@@ -47,10 +52,9 @@ header h1 {
     background: #000;
     padding: 5px 25px;
     position: relative;
-    right: 5%;
+    right: 8%;
     z-index: 5;
 }
-
 header h2 {
 	font-size: 1.5em;
 	font-weight: bold;
@@ -72,18 +76,18 @@ header h2 {
 
 
 
-/* Main-Left */
+/* Main HangMan Area */
 
 .main-left {
 	height: 400px;
 }
-
 #image {
 	margin: 30px 0 0 0;
+	max-height: 400px;
 	max-width: 400px;
 }
 #placeholder {
-	font-size: 2em;
+	font-size: 1.2em;
 }
 
 

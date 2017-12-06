@@ -1,46 +1,121 @@
-var wordsArr = ["Angry Beavers", "Animaniacs", "Dexters Lab", "Doug", "DuckTales", "PowerPuff Girls", "Rugrats", "TaleSpin", "Simpsons" ];
+var lettersGuessed = "";
+var guessesLeft;
+var placeholder;
 
+var game = {
+  words: {
+    angryBeavers: {
+      title: "AngryBeavers",
+      image: "assets/images/angryBeavers.png",
+    },
+    animaniacs: {
+      title: "Animaniacs",
+      image: "assets/images/animaniacs.jpg",
+    },
+    dextersLab: {
+      title: "DextersLab",
+      image: "assets/images/dextersLab.jpg",
+    },
+    doug: {
+      title: "Doug",
+      image: "assets/images/doug.jpg",
+    },
+    duckTales: {
+      title: "DuckTales",
+      image: "assets/images/duckTales.jpg",
+    },
+    powerPuff: {
+      title: "PowerPuffGirls",
+      image: "assets/images/powerPuff.jpg",
+    },
+    rugrats: {
+      title: "Rugrats",
+      image: "assets/images/rugrats.jpg",
+    },
+    talespin: {
+      title: "Talespin",
+      image: "assets/images/taleSpin.jpg",
+    },
+    simpsons: {
+      title: "Simpsons",
+      image: "assets/images/Simpsons.jpg",
+    }
+  },
+  	word: null,
+  	letters: [],
+	  matchedLetters: [],
+  	guessedLetters: [],
+  	totalGuesses: 0,
+  	wins: 0,
+	  losses: 0,
 
-var wins = 0;
-var losses = 0;
-var guesses = 0;
+	getGame: function() {
+		placeholder = "";
+		guessesLeft = 10;
+		lettersGuessed = "";
 
+		var objKeys = Object.keys(this.words);
+		this.word = objKeys[Math.floor(Math.random() * objKeys.length)].toLowerCase();
+		this.letters = this.word.split("");
+		this.wordView();
+	},
 
+	wordView: function() {
 
-// Execute Game after refresh/inital load
-window.onload = newGame();
+    var wordView = "";
+    for (var i = 0; i < this.letters.length; i++) {
 
-function newGame() {
+      if (this.matchedLetters.indexOf(this.letters[i]) !== -1) {
+        wordView += this.letters[i];
+      }
+      else {
+        wordView += "_ <span></span>";
+      }
+    }
 
-	var word = wordsArr[Math.floor(Math.random() * wordsArr.length)];
-	// Use RegEx to add underscores
-	var underscores = word.replace(/.{1}/g, "_ ");
-	document.getElementById("placeholder").innerHTML = underscores;
-	
-	//Add underscores
-	var underscores = "";
-	for ( i = 0; i < word.length; i++) {
-		//if (word contains spaces) {
-			//split the word
-		//} else {
-			underscores = underscores + "_ "
-		//}
-	}
-}
+    	document.querySelector("#currentWord").innerHTML = wordView;
+  	},
 
+};
+
+game.getGame();
 
 
 document.onkeyup = function(event) {
-	var userGuess = event.key.toLowerCase();
-	var choices = /[a-z]+/g;
-	var res = userGuess.match(choices);
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	var correct = 0;
 
-	if (!res) {
-		alert("Letters Only, Please");  
+	document.getElementById("guessLetters").innerHTML += lettersGuessed;
+	document.getElementById("guessRemain").innerHTML = guessesLeft;
+
+	for (var i = 0; i < game.letters.length; i++) {
+		if (userGuess == game.word.substring(i, i + 1)) {
+			correct++;
+			placeholder = placeholder.substring(0, i) + userGuess + placeholder.substring(i +1, placeholder.length +1);
+			document.getElementById("currentWord").innerHTML = placeholder;
+		}
+	}
+	
+	if (correct === 0) {
+	  	guessesLeft--;
 	}
 
-	// var word = wordsArr[Math.floor(Math.random() * wordsArr.length)];
-	// var underscores = word.replace(/.{1}/g, "_ ");
+	if (placeholder.indexOf("_") == -1) {
+		game.wins++;
+		var userWins = game.wins;
+		document.querySelector("#wins").innerHTML = userWins;
+		document.getElementById("image").src = game.words[game.word].image;
 
-	// document.getElementById("placeholder").innerHTML = underscores;
+		var correctGuess = " ";
+		document.querySelector("#guessLetters").innerHTML = correctGuess;
+		game.getGame();
+	}
+	
+	if (guessesLeft === -1) {
+		game.losses++;
+		var userLoses = game.losses;
+		document.querySelector("#losses").innerHTML = userLoses;
+		game.getGame();
+	}
 }
+
