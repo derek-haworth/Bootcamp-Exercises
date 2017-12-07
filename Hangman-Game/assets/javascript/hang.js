@@ -9,7 +9,6 @@ var wins = 0,
     keys = [],
     currentWord = [],
     wrongGuesses = [],
-    randomCharacter = [],
     randomWord = [],
     chosenWord = [],
     imageOuput,
@@ -90,7 +89,7 @@ document.onkeyup = function(event) {
     }
     //losses
     if (guessesRemain === 0) {
-        alert(randomCharacter);
+        alert(`The word was ${randomWord}`);
         document.getElementById("image").setAttribute("src", "assets/images/" + imageOuput +".jpg");
         losses++;
         initialize();
