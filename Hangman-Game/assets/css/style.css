@@ -10,8 +10,8 @@ body {
   background: #29d1ce; 
 }  
 html {
-	background-image: url('../images/background.png');
-	/* background-image: url('../images/starry.gif'); */
+	/* background-image: url('../images/background.png'); */
+	  background-image: url('../images/starry.gif');
   	padding: 0px 50px;
   	background-color: white;
   	background-size: 70px;
