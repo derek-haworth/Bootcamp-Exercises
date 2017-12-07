@@ -10,8 +10,8 @@ body {
   background: #29d1ce; 
 }  
 html {
-	/* background-image: url('../images/background.png'); */
-	background-image: url('../images/starry.gif');
+	background-image: url('../images/background.png');
+	/* background-image: url('../images/starry.gif'); */
   	padding: 0px 50px;
   	background-color: white;
   	background-size: 70px;
@@ -80,6 +80,11 @@ header h2 {
 
 .main-left {
 	height: 400px;
+}
+.spaces {
+  letter-spacing: 10px;
+  font-size: 30px;
+  font-weight: bold;
 }
 #image {
 	margin: 30px 0 0 0;
