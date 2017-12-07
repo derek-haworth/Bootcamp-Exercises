@@ -44,42 +44,26 @@ var game = {
   	totalGuesses: 0,
   	wins: 0,
 	  losses: 0,
+    placeholder: "",
 
 	getGame: function() {
-		placeholder = "";
-		guessesLeft = 10;
-		lettersGuessed = "";
-
 		var objKeys = Object.keys(this.words);
 		this.word = objKeys[Math.floor(Math.random() * objKeys.length)].toLowerCase();
 		this.letters = this.word.split("");
-		this.wordView();
-	},
-
-	wordView: function() {
-
-    var wordView = "";
+    
+	  //Add underscores
     for (var i = 0; i < this.letters.length; i++) {
-
-      if (this.matchedLetters.indexOf(this.letters[i]) !== -1) {
-        wordView += this.letters[i];
-      }
-      else {
-        wordView += "_ <span></span>";
-      }
+        this.placeholder += "_ ";
     }
-
-    	document.querySelector("#currentWord").innerHTML = wordView;
-  	},
+    document.getElementById("currentWord").innerHTML = this.placeholder;
+  }
 
 };
 
 var lettersGuessed = "";
-var guessesLeft;
-var placeholder;
-game.getGame();
+var guessesLeft = 10;
 
-
+window.onload = game.getGame();
 document.onkeyup = function(event) {
 	lettersGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 	var correct = 0;
@@ -88,10 +72,10 @@ document.onkeyup = function(event) {
 	document.getElementById("guessRemain").innerHTML = guessesLeft;
 
 	for (var i = 0; i < game.letters.length; i++) {
-		if (lettersGuesssed == game.word.substring(i, i + 1)) {
+		if (lettersGuessed == game.word.substring(i, i + 1)) {
 			correct++;
-			placeholder = placeholder.substring(0, i) + userGuess + placeholder.substring(i +1, placeholder.length +1);
-			document.getElementById("currentWord").innerHTML = placeholder;
+			game.placeholder = game.placeholder.substring(0, i) + lettersGuessed + game.placeholder.substring(i +1, game.placeholder.length +1);
+			document.getElementById("currentWord").innerHTML = game.placeholder;
 		}
 	}
 	
@@ -99,7 +83,7 @@ document.onkeyup = function(event) {
 	  	guessesLeft--;
 	}
 
-	if (placeholder.indexOf("_") == -1) {
+	if (game.placeholder.indexOf("_") == -1) {
 		game.wins++;
 		var userWins = game.wins;
 		document.querySelector("#wins").innerHTML = userWins;
