@@ -1,7 +1,3 @@
-var lettersGuessed = "";
-var guessesLeft;
-var placeholder;
-
 var game = {
   words: {
     angryBeavers: {
@@ -78,18 +74,21 @@ var game = {
 
 };
 
+var lettersGuessed = "";
+var guessesLeft;
+var placeholder;
 game.getGame();
 
 
 document.onkeyup = function(event) {
-	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	lettersGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 	var correct = 0;
 
 	document.getElementById("guessLetters").innerHTML += lettersGuessed;
 	document.getElementById("guessRemain").innerHTML = guessesLeft;
 
 	for (var i = 0; i < game.letters.length; i++) {
-		if (userGuess == game.word.substring(i, i + 1)) {
+		if (lettersGuesssed == game.word.substring(i, i + 1)) {
 			correct++;
 			placeholder = placeholder.substring(0, i) + userGuess + placeholder.substring(i +1, placeholder.length +1);
 			document.getElementById("currentWord").innerHTML = placeholder;
