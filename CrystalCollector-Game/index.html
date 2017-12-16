@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Crystals Collector | Derek Haworth</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Styles -->
+	<link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <div class="row">
+            <div id="ready" class="col-sm-12">
+                <h1>Crystals Collector</h1>
+
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                <p>You win the game by matching your total score to random number, you lose game if your total score goes above the random number.</p>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <p>Each time when the game starts, the game will change the values of each crystal.</p>
+            </div> 
+        </div>
+    </div>
+
+    <div class="container hidden">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 class="number-to-guess">0</h2>
+            </div> 
+            <div class="col-sm-6">
+                <div class="score-board">
+                    <h3 class="message"></h3>
+                    <h3>Wins: <span class="score-wins">0</span></h3>   
+                    <h3>Losses: <span class="score-losses">0</span></h3>
+                </div> 
+            </div> 
+        </div> 
+        <div class="row">
+            <div class="col-md-3">
+                <img src="assets/images/crystal-red.png" class="crystal crystal-red" alt="Red Crystal">
+            </div> 
+            <div class="col-md-3">                   
+                <img src="assets/images/crystal-blue.png" class="crystal crystal-blue" alt="Blue Crystal">
+            </div>
+            <div class="col-md-3">
+                <img src="assets/images/crystal-yellow.png" class="crystal crystal-yellow" alt="Yellow Crystal">
+            </div>
+            <div class="col-md-3">   
+                <img src="assets/images/crystal-green.png" class="crystal crystal-green" alt="Green Crystal">
+            </div> 
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Your total score is:</h3>
+                <h3 class="total-score">0</h3>
+            </div> 
+        </div> 
+    </div> 
+    
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="assets/javascript/game.js"></script>
+    
+</body>
+</html>
