@@ -107,7 +107,7 @@ $(document).ready(function() {
         }
 
         $(".playerAttacks").html("You Attacked " + y.name + " for " + attackPowerIncrement);
-        $(".defenderAttacks").html(y.name + " attacked you for " + y.counterAttackPower);
+        $(".defenderAttacks").html(y.name + " attacked you for " + y.counter);
     }
 
 
