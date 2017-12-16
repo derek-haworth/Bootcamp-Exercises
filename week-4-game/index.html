@@ -12,79 +12,81 @@
 	<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-	<div id="ready"></div>
+	<div class="container">
+		<div id="ready">
+			<h2>Rules</h2>
+			<ol class="rules">
+    	    	<li>When the game starts, choose a character by clicking on the fighter's picture. You will fight as that character for the rest of the game.</li>
+    	    	<li>You must then defeat all of the remaining fighters.</li>
+    	    	<li>Choose an opponent by clicking on an enemy's picture</li>
+    	    	<li>Once you select an opponent, that enemy is moved to the defender area</li>
+    	    	<li>Click the attack button to damage the defender's HP, your opponent will counter and you will also lose HP</li>
+    	    	<li>You will win this game after defeating all your enemies.</li>
+    	  </ol>
+		</div>
+	</div>
 	<div class="container hidden">
-      <h1 class="title">Welcome</h1>
-      <ol class="rules">
-      	<h2>Rules</h2>
-        <li>When the game starts, choose a character by clicking on the fighter's picture. You will fight as that character for the rest of the game.</li>
-        <li>You must then defeat all of the remaining fighters.</li>
-        <li>Choose an opponent by clicking on an enemy's picture</li>
-        <li>Once you select an opponent, that enemy is moved to the defender area</li>
-        <li>Click the attack button to damage the defender's HP, your opponent will counter and you will also lose HP</li>
-        <li>You will win this game after defeating all your enemies.</li>
-      </ol>
+		<h1 class="title">Welcome</h1>
 
-      
-      <div class="inactive">
-        <div class="character one" data-player="1">
-          <a href="#">
-            <img class="profile" src="assets/images/" alt="">
-            <h4 class="score">X</h4>
-          </a>
-        </div>
-        <div class="character two" data-player="2">
-          <a href="#">
-            <img class="profile" src="assets/images/" alt="">
-            <h4 class="score">X</h4>
-          </a>
-        </div>
-        <div class="character three" data-player="3">
-          <a href="#">
-            <img class="profile" src="assets/images/" alt="">
-            <h4 class="score">X</h4>
-          </a>
-        </div>
-        
-        <div class="character four" data-player="4">
-          <a href="#">
-            <img class="profile" src="assets/images/" alt="">
-            <h4 class="score">X</h4>
-          </a>
-        </div>
-      </div>
-      
-      <div class="row chosen-player">
-        <h3 class="player">Your Character</h3>
-      </div>
-      <div class="row enemy-bench">
-        <h3 class="enemies">Enemies Available to Attack</h3>
-      </div>
-      
-      <div class="row fight-section">
-        <h3 class="fight">Fight Section </h3>
-      </div>
-      <div class="row attackRow">
-        <button class="btn btn-danger attack">Attack</button>
-      </div>
-      <div class="row defenderRow">
-        <h3 class="defender">Defender</h3>
-      </div>
+		<div class="inactive">
+			<div class="character one" data-player="1">
+				<a href="#">
+					<img class="profile" src="assets/images/" alt="">
+					<h4 class="score">X</h4>
+				</a>
+			</div>
+			<div class="character two" data-player="2">
+				<a href="#">
+					<img class="profile" src="assets/images/" alt="">
+					<h4 class="score">X</h4>
+				</a>
+			</div>
+			<div class="character three" data-player="3">
+				<a href="#">
+					<img class="profile" src="assets/images/" alt="">
+					<h4 class="score">X</h4>
+				</a>
+			</div>
 
-      <p class="playerAttacks"></p>
-      <p class="defenderAttacks"></p>
-      <p class="lost won"></p>
+			<div class="character four" data-player="4">
+				<a href="#">
+					<img class="profile" src="assets/images/" alt="">
+					<h4 class="score">X</h4>
+				</a>
+			</div>
+		</div>
 
-      <div class="restartRow">
-        <button id="button" class="btn clear" value="Refresh Page restart">Restart</button>
-      </div>
-     
-    </div>
+		<div class="row chosen-player">
+			<h3 class="player">Your Character</h3>
+		</div>
+		<div class="row enemy-bench">
+			<h3 class="enemies">Enemies Available to Attack</h3>
+		</div>
+
+		<div class="row fight-section">
+			<h3 class="fight">Fight Section </h3>
+		</div>
+		<div class="row attackRow">
+			<button class="btn btn-danger attack">Attack</button>
+		</div>
+		<div class="row defenderRow">
+			<h3 class="defender">Defender</h3>
+		</div>
+
+		<p class="playerAttacks"></p>
+		<p class="defenderAttacks"></p>
+		<p class="lost won"></p>
+
+		<div class="restartRow">
+			<button id="button" class="btn clear" value="Refresh Page restart">Restart</button>
+		</div>
+
+	</div>
 
 
 
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script src="assets/javascript/game.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="assets/javascript/game.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

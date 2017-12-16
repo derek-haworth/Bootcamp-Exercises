@@ -32,10 +32,10 @@ $(document).ready(function() {
         defender = false;
     }
 
-    $("#ready").prepend("<button class='start btn btn-primary'>START</button>");
+    $("#ready").append("<button class='start btn btn-primary'>START</button>");
 
     function Start() {
-        $(this).hide();
+        $("#ready").hide();
         $(".container").removeClass('hidden');
     }
 

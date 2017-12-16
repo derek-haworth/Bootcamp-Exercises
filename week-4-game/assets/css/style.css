@@ -2,13 +2,12 @@ body {
 	background-image: url("");
 	background-size: cover;
 }
-#ready {
-	text-align: center;
+
+.rules{
+	text-align: left;
 }
+
 .start {
-	position: absolute;
-    top: 50%;
-    margin: 0 auto;
     width: 200px;
     padding: 30px;
     border-radius: 5px;
@@ -18,14 +17,6 @@ body {
 
 .player, .enemies, .fight, .defender {
 	font-size: 15px;
-}
-
-.rules {
-   position: fixed;
-   right: 20px;
-   top: 300px;
-   padding: 15px;
-   overflow: auto;
 }
 
 .attack {
