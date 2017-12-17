@@ -1,17 +1,17 @@
 $(document).ready(function() {
 
-    var randomNumber;
-    var crystalNumber;
+    var randomNumber,
+        crystalNumber,
 
-    var wins = 0;
-    var losses = 0;
-    var totalScore = 0;
+        wins = 0,
+        losses = 0,
+        totalScore = 0,
 
-    var scoreWins = $(".score-wins");
-    var scoreLosses = $(".score-losses");
-    var message = $(".message");
-    var crystalImage = $(".crystal");
-    var totalScoreWrite = $(".total-score");
+        scoreWins = $(".score-wins"),
+        scoreLosses = $(".score-losses"),
+        message = $(".message"),
+        crystalImage = $(".crystal"),
+        totalScoreWrite = $(".total-score");
 
     $("#ready").append("<button class='start btn btn-primary'>START</button>");
 
@@ -21,7 +21,7 @@ $(document).ready(function() {
     }
 
     function gameStart() {
-
+        totalScore = 0;
         randomNumber = Math.floor(Math.random() * 102) + 19;
         $(".number-to-guess").text(randomNumber);
         crystalImage.each(function(i, obj) {
