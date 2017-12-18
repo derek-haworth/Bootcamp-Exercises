@@ -15,9 +15,13 @@ $(document).ready(function() {
 
     $("#ready").append("<button class='start btn btn-primary'>START</button>");
 
-    function Start() {
+    function start() {
         $("#ready").hide();
         $(".container").removeClass('hidden');
+    }
+
+    function replay(){
+        $(".crystal-move.play").removeClass("play");
     }
 
     function gameStart() {
@@ -35,28 +39,40 @@ $(document).ready(function() {
 
     gameStart();
 
-    crystalImage.on("click", function() {
-
-        var crystalValue = ($(this).attr("value"));
-        crystalValue = parseInt(crystalValue);
-        
-        totalScore += crystalValue;
-        totalScoreWrite.text(totalScore);
-
-        if (totalScore === randomNumber) {
-            message.text("You Win!");
-            wins++;
-            scoreWins.text(wins);
-            gameStart();
-        }
-
-        else if (totalScore >= randomNumber) {
-            message.text("You Lose!");
-            losses++;
-            scoreLosses.text(losses);
-            gameStart();
-        }
+    $(crystalImage).each(function(){
+        $(this).on("click", function() {
+    
+            var crystalValue = ($(this).attr("value"));
+            crystalValue = parseInt(crystalValue);
+            
+            totalScore += crystalValue;
+            totalScoreWrite.text(totalScore);
+    
+            if (totalScore === randomNumber) {
+                message.text("You Win!");
+                wins++;
+                scoreWins.text(wins);
+                gameStart();
+            }
+    
+            else if (totalScore >= randomNumber) {
+                message.text("You Lose!");
+                losses++;
+                scoreLosses.text(losses);
+                gameStart();
+            }
+    
+            if ($(".crystal-move").hasClass("play")) {
+                replay();
+            } else {
+                $(".crystal-move").addClass("play");
+    
+                setTimeout(function() {
+                    $(".crystal-move").removeClass("play");
+                }, 800)
+            }
+        });
     });
 
-    $(".start").on("click", Start);
+    $(".start").on("click", start);
 });
