@@ -11,3 +11,10 @@
 [Bootstrap-Portfolio](https://derek-haworth.github.io/Bootcamp-Exercises/Bootstrap-Portfolio/)
 
 [Hangman-Game](https://derek-haworth.github.io/Bootcamp-Exercises/Hangman-Game/)
+
+[CrystalCollector-Game](https://derek-haworth.github.io/Bootcamp-Exercises/CrystalCollector-Game/)
+
+[RPG-Game](https://derek-haworth.github.io/Bootcamp-Exercises/RPG-Game/)
+
+(In Progress)
+[Trivia-Game](https://derek-haworth.github.io/Bootcamp-Exercises/Trivia-Game)
