@@ -1,17 +1,24 @@
+.game-container {
+    margin-top: 30px;
+}
 .crystals-container {
     padding: 40px 0;
 }
+.crystal{
+    cursor: pointer;
+}
+
+/* Animations */
 .smaller {
     margin: 0 0 0 20px;
     width: 45px;
 }
-
 .crystal-move {
   position: absolute;
   text-align: center;
   opacity: 0;
+  z-index: -1;
 }
-
 .crystal-move img{
   transition: opacity .3s ease-out;
 }
@@ -19,16 +26,16 @@
 .play{
   transition:all .5s ease-out;
   -webkit-animation-name: position;
-  -webkit-animation-duration: 800ms;
+  -webkit-animation-duration: 700ms;
   -webkit-animation-timing-function: linear;
   -moz-animation-name: position;
-  -moz-animation-duration: 800ms;
+  -moz-animation-duration: 700ms;
   -moz-animation-timing-function: linear;
   -ms-animation-name: position;
-  -ms-animation-duration: 800ms;
+  -ms-animation-duration: 700ms;
   -ms-animation-timing-function: linear;
   animation-name: position;
-  animation-duration: 800ms;
+  animation-duration: 700ms;
   animation-timing-function: linear;
 }
 

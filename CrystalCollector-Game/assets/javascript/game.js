@@ -61,7 +61,8 @@ $(document).ready(function() {
                 scoreLosses.text(losses);
                 gameStart();
             }
-    
+            
+            // crystal animation
             if ($(".crystal-move").hasClass("play")) {
                 replay();
             } else {
@@ -69,7 +70,7 @@ $(document).ready(function() {
     
                 setTimeout(function() {
                     $(".crystal-move").removeClass("play");
-                }, 800)
+                }, 700)
             }
         });
     });
