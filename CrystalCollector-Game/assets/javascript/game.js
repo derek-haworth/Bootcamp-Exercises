@@ -9,7 +9,6 @@ $(document).ready(function() {
 
         scoreWins = $(".score-wins"),
         scoreLosses = $(".score-losses"),
-        message = $(".message"),
         crystalImage = $(".crystal"),
         totalScoreWrite = $(".total-score");
 
@@ -32,47 +31,48 @@ $(document).ready(function() {
             crystalNumber = Math.floor(Math.random() * 12) + 1;
             $(this).attr("value", crystalNumber);
         });
-
-        totalScoreWrite.text("0");
-        
+        totalScoreWrite.text("0");  
     }
 
     gameStart();
 
-    $(crystalImage).each(function(){
-        $(this).on("click", function() {
+
+    $(crystalImage).on("click", function() {
+
+        var crystalValue = ($(this).attr("value"));
+        crystalValue = parseInt(crystalValue);
+        
+        totalScore += crystalValue;
+        totalScoreWrite.text(totalScore);
+
+        if (totalScore === randomNumber) {
+            $(".message.alert-success").each(function(){
+                $(this).fadeIn(1000).text("You Win!").fadeOut(3000);
+            });
+            wins++;
+            scoreWins.text(wins);
+            gameStart();
+
+        } else if (totalScore >= randomNumber) {
+            $(".message.alert-danger").each(function(){
+                $(this).fadeIn(1000).text("You Lose!").fadeOut(3000);
+            });  
+            losses++;
+            scoreLosses.text(losses);
+            gameStart();
+        }
     
-            var crystalValue = ($(this).attr("value"));
-            crystalValue = parseInt(crystalValue);
-            
-            totalScore += crystalValue;
-            totalScoreWrite.text(totalScore);
-    
-            if (totalScore === randomNumber) {
-                message.text("You Win!");
-                wins++;
-                scoreWins.text(wins);
-                gameStart();
-            }
-    
-            else if (totalScore >= randomNumber) {
-                message.text("You Lose!");
-                losses++;
-                scoreLosses.text(losses);
-                gameStart();
-            }
-            
-            // crystal animation
-            if ($(".crystal-move").hasClass("play")) {
-                replay();
-            } else {
-                $(".crystal-move").addClass("play");
-    
-                setTimeout(function() {
-                    $(".crystal-move").removeClass("play");
-                }, 700)
-            }
-        });
+        // crystal animation
+
+        if ($(".crystal-move").hasClass("play")) {
+            replay();
+        } else {
+            $(".crystal-move").addClass("play");
+            setTimeout(function() {
+                $(".crystal-move").removeClass("play");
+            }, 700)
+        }
+
     });
 
     $(".start").on("click", start);

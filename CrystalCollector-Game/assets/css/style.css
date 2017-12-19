@@ -1,6 +1,9 @@
 .game-container {
     margin-top: 30px;
 }
+.message {
+    display: none;
+}
 .crystals-container {
     padding: 40px 0;
 }
