@@ -211,7 +211,7 @@ $(document).ready(function() {
     ];
 
 
-    setTimeout(startButtonAnimation, 1000 * 3);
+    setTimeout(startButtonAnimation, 1000 * 3.5);
 
     // Animates start button
     function startButtonAnimation() {
