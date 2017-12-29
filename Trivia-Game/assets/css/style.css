@@ -1,0 +1,133 @@
+/* Typography */
+
+@font-face {
+    font-family: "JurassicPark";
+    src: url('https://cdn.rawgit.com/AllThingsSmitty/fonts/master/JurassicPark/JurassicPark.woff2') format("woff2"),
+         url('https://cdn.rawgit.com/AllThingsSmitty/fonts/master/JurassicPark/JurassicPark.woff') format("woff")
+}
+@font-face {
+    font-family: Digital;
+    src: url(../fonts/digital.ttf) format("truetype");
+}
+
+
+/* Global */
+
+html {
+    background: url("../images/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+/* Jumbotron */
+
+.container .title {
+    width: 40%;
+    min-height: 230px;
+    background: transparent;
+    margin: 0 auto;
+    border-radius: 0;
+}
+.jurassic-movie {
+    color: #000;
+    font-family: "JurassicPark";
+    font-size: 120px;
+    line-height: .7;
+    margin: 0;
+}
+.trivia {
+    color: #000;
+}
+
+
+/* UI */
+
+.game-wrapper {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 30px;
+    border: 10px solid rgba(255, 255, 255, 0);
+    margin: 60px 0;
+    padding: 0 0 60px;
+}
+.questions-wrapper {
+    padding: 40px 10% 0;
+}
+a.start-button {
+    font-size: 30px;
+    background: #bb0000;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 0;
+    border-radius: 10px;
+    padding: 5px 30px;
+    letter-spacing: 1px;
+    opacity: 0;
+}
+
+
+
+
+/* Timer */
+
+.time-remaining {
+    padding: 4px 10px;
+}
+.timer-display {
+    display: block;
+    font-size: 3em;
+    background: #000;
+    padding: 10px 0;
+    border-radius: 5px;
+    color: #bb0000;
+}
+h3.current-question {
+    margin-bottom: 30px;
+}
+input.question-option {
+    display: block;
+    width: 420px;
+    height: 25px;
+    border-bottom: 1px solid #808080;
+    border-right: 1px solid #808080;
+    border-left: 1px solid #c0c0c0;
+    border-top: 1px solid #c0c0c0;
+    box-shadow: -1px -1px white, 0px -1px white, -1px 0px white, 2px 2px black, -2px 2px black, 2px -2px black, -2px -2px black;
+    font-size: 11px;
+    font-family: Helvetica;
+    line-height: 22px;
+    background: #c0c0c0;
+    margin: 0 auto 20px auto;
+    color: black;
+}
+input.question-option:hover {
+    text-decoration: none;
+}
+a.question-option:focus {
+
+}
+
+
+
+/* Answer Reveal */
+
+.message {
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1em;
+    color: #bb0000;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+.correct-message {
+    font-size: 1.6em;
+}
+.correct-answer {
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 1.2em;
+    margin-bottom: 0.6em;
+}
+.img-responsive {
+    display: inline-block;
+}
