@@ -210,26 +210,12 @@ $(document).ready(function() {
         }
     ];
 
-    // Intro Animation
-    var gameWrapper = $(".game-wrapper"),
-        startButton = $(".start-button"),
-        logoTrivia = $(".trivia");
 
-    // setTimeout(bodyAnimation, 1000 * 12);
-    setTimeout(logoTriviaAnimation, 1000 * 2);
-    setTimeout(startButtonAnimation, 1000 * 4);
-
-     // Animates Trivia word
-    function logoTriviaAnimation() {
-        logoTrivia.animate({
-            marginRight: "0.5em",
-            opacity: "1"
-        }, 500);
-    };
+    setTimeout(startButtonAnimation, 1000 * 3);
 
     // Animates start button
     function startButtonAnimation() {
-        startButton.animate({
+        $(".start-button").animate({
             opacity: "1"
         }, 500);
     };
@@ -334,7 +320,12 @@ $(document).ready(function() {
             else if ( questionItem === 1 ||  questionItem === 2 ||  questionItem === 3 ||  questionItem === 4 ) {
 
                 // Puts the question options in anchor tags
-                questionOption = $("<a>").text(questionItemContent).addClass("question-option " + questionProperty).attr("value", questionProperty);
+                questionOption = $("<input>").addClass("question-option " + questionProperty)
+                .attr({
+                    value: questionItemContent,
+                    data: questionProperty,
+                    type: "button"
+                });
     
                 // Appends to the questions wrapper
                 questionsWrapper.append(questionOption);
@@ -352,8 +343,8 @@ $(document).ready(function() {
 
           }
 
-          // Putting the correct answer into a variable
-          correctAnswerHolder = $(".correctAnswer").text();
+          // Put the correct answer into a variable
+          correctAnswerHolder = $(".correctAnswer").attr('value');
 
     };
 
@@ -487,7 +478,8 @@ $(document).ready(function() {
     $(".questions-wrapper").on("click", ".question-option", function() {
 
         // Grabs the value in the value attribute
-        var chosenAnswer = $(this).text();
+        var chosenAnswer = $(this).attr('value');
+        console.log(chosenAnswer);
 
         // If correct answer was chosen
         if (chosenAnswer === correctAnswerHolder) {
