@@ -14,7 +14,7 @@
 
 [CrystalCollector-Game](https://derek-haworth.github.io/Bootcamp-Exercises/CrystalCollector-Game/)
 
+(In Progress)
 [RPG-Game](https://derek-haworth.github.io/Bootcamp-Exercises/RPG-Game/)
 
-(In Progress)
 [Trivia-Game](https://derek-haworth.github.io/Bootcamp-Exercises/Trivia-Game)
