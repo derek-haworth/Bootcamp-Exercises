@@ -17,4 +17,6 @@
 (In Progress)
 [RPG-Game](https://derek-haworth.github.io/Bootcamp-Exercises/RPG-Game/)
 
-[Trivia-Game](https://derek-haworth.github.io/Bootcamp-Exercises/Trivia-Game)
+[Trivia-Game](https://derek-haworth.github.io/Bootcamp-Exercises/Trivia-Game/)
+
+[Giphy](https://derek-haworth.github.io/Bootcamp-Exercises/GifTastic/)
