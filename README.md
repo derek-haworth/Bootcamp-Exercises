@@ -1,6 +1,6 @@
 # Bootcamp-Exercises
 
-## Various Exercises from Northwestern Coding Bootcamp
+## Exercises from Northwestern Coding Bootcamp
 
 #### View them live by clicking any of the links below
 
