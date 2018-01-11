@@ -1,0 +1,3 @@
+.table-borderless thead tr th {
+	border: 0;
+}
