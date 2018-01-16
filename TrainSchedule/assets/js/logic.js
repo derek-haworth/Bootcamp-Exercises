@@ -63,9 +63,6 @@ $(document).ready(function(){
 
 	database.ref().on("child_added", function(childSnapshot) {
 
-		var rowId = database.ref().key;
-		console.log(rowId);
-
 		// Store it
 		var name = childSnapshot.val().name;
 		var destination = childSnapshot.val().destination;
@@ -74,16 +71,14 @@ $(document).ready(function(){
 		var nextTrain = childSnapshot.val().nextTrainFormatted;
 		var minAway = childSnapshot.val().minutesTilTrain;
 
+		// childSnapshot.key = unique id in firebase
 		$("#trainRows").prepend(
-			"<tr id=" + "'" + rowId + "'" + "><td>" + name + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextTrain + "</td><td>" + minAway + "</td><td>" + "<input type='submit' value='Remove' class='remove-train btn btn-primary btn-sm'></td></tr>"
+			"<tr id=" + "'" + childSnapshot.key + "'" + "><td>" + name + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextTrain + "</td><td>" + minAway + "</td><td>" + "<input type='submit' value='Remove' class='remove-train btn btn-primary btn-sm'></td></tr>"
 		);
 
 	});
 
 	$("body").on("click", ".remove-train", function() {
-		debugger;
-
-		// DEBUGGING
 
 		// When clicking delete, find the row associated with the button - delete it
 		// Next find the id of said row and remove that key value from the database
