@@ -1,13 +1,3 @@
-var nextTrain = '',
-	nextTrainFormatted = '',
-	minutesAway = '',
-	firstTimeConverted = '',
-	currentTime = '',
-	diffTime = '',
-	timeRemain = '',
-	minutesTilTrain = '';
-
-
 $(document).ready(function(){
 
 // Initialize Firebase
@@ -28,26 +18,22 @@ $(document).ready(function(){
 
 		event.preventDefault();
 
+		var firstTrain = $("#time").val().trim();
+		var date = new Date();
+		newHourMin = firstTrain.split(':');
+		date.setHours(newHourMin[0]);
+		date.setMinutes(newHourMin[1]);
+
+		var start = moment(date).unix();
 		var name = $("#name").val().trim();
 		var destination = $("#destination").val().trim();
 		var frequency = $("#frequency").val().trim();
-		var firstTrain = $("#time").val().trim();
-
-		firstTimeConverted = moment(firstTrain, "hh:mm").subtract(1, "years");
-		currentTime = moment();
-		diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-		timeRemain = diffTime % frequency;
-		minutesTilTrain = frequency = timeRemain;
-		nextTrain = moment().add(minutesTilTrain, "minutes");
-		nextTrainFormatted = moment(nextTrain).format("hh:mm");
 
 		var newTrain = {
 			name: name,
 			destination: destination,
-			//start: firstTrain,
-			frequency: frequency,
-			//nextTrainFormatted: nextTrainFormatted,
-			minutesTilTrain: minutesTilTrain
+			start: start,
+			frequency: frequency
 		}
 
 		// Upload to the database
@@ -68,12 +54,18 @@ $(document).ready(function(){
 		var destination = childSnapshot.val().destination;
 		var start = childSnapshot.val().start;
 		var frequency = childSnapshot.val().frequency;
-		var nextTrain = childSnapshot.val().nextTrainFormatted;
-		var minAway = childSnapshot.val().minutesTilTrain;
+
+		var now = moment();
+		var newTime = moment.unix(start);
+		var away = moment(now).diff(newTime, "minutes") % frequency;
+		var minAway = frequency - away;
+		var arrival = moment(now).add(minAway, "minutes");
+		var nextArrival = moment(arrival).format('HH:mm');
+
 
 		// childSnapshot.key = unique id in firebase
 		$("#trainRows").prepend(
-			"<tr id=" + "'" + childSnapshot.key + "'" + "><td>" + name + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextTrain + "</td><td>" + minAway + "</td><td>" + "<input type='submit' value='Remove' class='remove-train btn btn-primary btn-sm'></td></tr>"
+			"<tr id=" + "'" + childSnapshot.key + "'" + "><td>" + name + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextArrival + "</td><td>" + minAway + "</td><td>" + "<input type='submit' value='Remove' class='remove-train btn btn-primary btn-sm'></td></tr>"
 		);
 
 	});
