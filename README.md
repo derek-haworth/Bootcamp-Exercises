@@ -1,22 +1,14 @@
-# Bootcamp-Exercises
-
-## Exercises from Northwestern Coding Bootcamp
+# Exercises
 
 #### View them live by clicking any of the links below
 
-[Basic-Portfolio](https://derek-haworth.github.io/Bootcamp-Exercises/Basic-Portfolio/)
+[Hangman-Game](https://derek-haworth.github.io/Exercises/Hangman-Game/)
 
-[Responsive-Portfolio](https://derek-haworth.github.io/Bootcamp-Exercises/Responsive-Portfolio/)
-
-[Bootstrap-Portfolio](https://derek-haworth.github.io/Bootcamp-Exercises/Bootstrap-Portfolio/)
-
-[Hangman-Game](https://derek-haworth.github.io/Bootcamp-Exercises/Hangman-Game/)
-
-[CrystalCollector-Game](https://derek-haworth.github.io/Bootcamp-Exercises/CrystalCollector-Game/)
+[CrystalCollector-Game](https://derek-haworth.github.io/Exercises/CrystalCollector-Game/)
 
 (In Progress)
-[RPG-Game](https://derek-haworth.github.io/Bootcamp-Exercises/RPG-Game/)
+[RPG-Game](https://derek-haworth.github.io/Exercises/RPG-Game/)
 
-[Trivia-Game](https://derek-haworth.github.io/Bootcamp-Exercises/Trivia-Game/)
+[Trivia-Game](https://derek-haworth.github.io/Exercises/Trivia-Game/)
 
-[Giphy](https://derek-haworth.github.io/Bootcamp-Exercises/GifTastic/)
+[Giphy](https://derek-haworth.github.io/Exercises/GifTastic/)
