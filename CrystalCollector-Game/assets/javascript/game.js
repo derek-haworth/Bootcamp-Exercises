@@ -62,7 +62,13 @@ $(document).ready(function() {
             gameStart();
         }
     
-        // crystal animation
+        // var color = $(this).attr("data-name");
+        // $(color).addClass("play");
+        // $(this).addClass("play");
+
+        // setTimeout(function() {
+        //     $(this).removeClass("play");
+        // }, 700)
 
         if ($(".crystal-move").hasClass("play")) {
             replay();
@@ -74,6 +80,7 @@ $(document).ready(function() {
         }
 
     });
+
 
     $(".start").on("click", start);
 });

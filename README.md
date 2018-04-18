@@ -1,14 +1,16 @@
-# Exercises
+# Experiments and Games
 
-#### View them live by clicking any of the links below
+## View them live by clicking any of the links below
+- or view the code by clicking into the respected folder.
 
-[Hangman-Game](https://derek-haworth.github.io/Exercises/Hangman-Game/)
+### [CrystalCollector-Game](https://derek-haworth.github.io/Exercises/CrystalCollector-Game/)
 
-[CrystalCollector-Game](https://derek-haworth.github.io/Exercises/CrystalCollector-Game/)
+### [Giphy](https://derek-haworth.github.io/Exercises/GifTastic/)
 
-(In Progress)
-[RPG-Game](https://derek-haworth.github.io/Exercises/RPG-Game/)
+### [90's Cartoon Hangman-Game](https://derek-haworth.github.io/Exercises/Hangman-Game/)
 
-[Trivia-Game](https://derek-haworth.github.io/Exercises/Trivia-Game/)
+### [RPG-Game](https://derek-haworth.github.io/Exercises/RPG-Game/)
 
-[Giphy](https://derek-haworth.github.io/Exercises/GifTastic/)
+### [Jurassic Park Trivia-Game](https://derek-haworth.github.io/Exercises/Trivia-Game/)
+
+### [Train Scheduler](https://derek-haworth.github.io/Exercises/TrainSchedule/)
