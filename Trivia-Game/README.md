@@ -2,7 +2,7 @@
 
 Trivia game using `JavaScript` for the logic and `jQuery` to manipulate HTML.
 
-[View it on the line](https://derek-haworth.github.io/Bootcamp-Exercises/Trivia-Game/)
+[View it on the line](https://derek-haworth.github.io/Experiments-and-Games/Trivia-Game/)
 
 Here's how the app works:
 

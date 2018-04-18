@@ -2,7 +2,7 @@
 
 RPG game app that features dynamically updated HTML powered by `jQuery`.
 
-[View it on the line](https://derek-haworth.github.io/Bootcamp-Exercises/RPG-Game/)
+[View it on the line](https://derek-haworth.github.io/Experiments-and-Games/RPG-Game/)
 
 Here's how the app works:
 
